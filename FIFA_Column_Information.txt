@@ -1,0 +1,300 @@
+
+COLUMN: player_id
+DATA TYPE: str
+SAMPLE VALUES: ['P00055', 'P00070', 'P00066', 'P00073', 'P00059']
+
+COLUMN: player_name
+DATA TYPE: str
+SAMPLE VALUES: ['Rodri Fati', 'Ansu Le Normand', 'Gavi Ramos', 'Pedro Cubarsi', 'Alvaro Oyarzabal']
+
+COLUMN: age
+DATA TYPE: int64
+SAMPLE VALUES: [26, 19, 18, 20, 23]
+
+COLUMN: nationality
+DATA TYPE: str
+SAMPLE VALUES: ['Spanish', 'Spanish', 'Spanish', 'Spanish', 'Spanish']
+
+COLUMN: team
+DATA TYPE: str
+SAMPLE VALUES: ['Spain', 'Spain', 'Spain', 'Spain', 'Spain']
+
+COLUMN: jersey_number
+DATA TYPE: int64
+SAMPLE VALUES: [3, 18, 14, 21, 7]
+
+COLUMN: position
+DATA TYPE: str
+SAMPLE VALUES: ['Goalkeeper', 'Midfielder', 'Midfielder', 'Forward', 'Defender']
+
+COLUMN: height_cm
+DATA TYPE: int64
+SAMPLE VALUES: [195, 178, 177, 182, 191]
+
+COLUMN: weight_kg
+DATA TYPE: int64
+SAMPLE VALUES: [75, 75, 72, 74, 81]
+
+COLUMN: preferred_foot
+DATA TYPE: str
+SAMPLE VALUES: ['Left', 'Right', 'Left', 'Right', 'Left']
+
+COLUMN: club_name
+DATA TYPE: str
+SAMPLE VALUES: ['RB Salzburg', 'Chelsea', 'AIK', 'PSV Eindhoven', 'Juventus']
+
+COLUMN: market_value_eur
+DATA TYPE: int64
+SAMPLE VALUES: [4384884, 4918927, 125015698, 11805512, 13325174]
+
+COLUMN: match_id
+DATA TYPE: str
+SAMPLE VALUES: ['M00001', 'M00001', 'M00001', 'M00001', 'M00001']
+
+COLUMN: match_date
+DATA TYPE: str
+SAMPLE VALUES: ['2026-07-10', '2026-07-10', '2026-07-10', '2026-07-10', '2026-07-10']
+
+COLUMN: stadium
+DATA TYPE: str
+SAMPLE VALUES: ['Hard Rock Stadium', 'Hard Rock Stadium', 'Hard Rock Stadium', 'Hard Rock Stadium', 'Hard Rock Stadium']
+
+COLUMN: city
+DATA TYPE: str
+SAMPLE VALUES: ['Miami', 'Miami', 'Miami', 'Miami', 'Miami']
+
+COLUMN: opponent_team
+DATA TYPE: str
+SAMPLE VALUES: ['South Africa', 'South Africa', 'South Africa', 'South Africa', 'South Africa']
+
+COLUMN: tournament_stage
+DATA TYPE: str
+SAMPLE VALUES: ['Group Stage', 'Group Stage', 'Group Stage', 'Group Stage', 'Group Stage']
+
+COLUMN: match_result
+DATA TYPE: str
+SAMPLE VALUES: ['W', 'W', 'W', 'W', 'W']
+
+COLUMN: goals_team
+DATA TYPE: int64
+SAMPLE VALUES: [1, 1, 1, 1, 1]
+
+COLUMN: goals_opponent
+DATA TYPE: int64
+SAMPLE VALUES: [0, 0, 0, 0, 0]
+
+COLUMN: minutes_played
+DATA TYPE: int64
+SAMPLE VALUES: [72, 90, 73, 80, 79]
+
+COLUMN: goals
+DATA TYPE: int64
+SAMPLE VALUES: [0, 0, 1, 1, 0]
+
+COLUMN: assists
+DATA TYPE: int64
+SAMPLE VALUES: [0, 0, 0, 1, 0]
+
+COLUMN: shots
+DATA TYPE: int64
+SAMPLE VALUES: [0, 0, 2, 5, 1]
+
+COLUMN: shots_on_target
+DATA TYPE: int64
+SAMPLE VALUES: [0, 0, 0, 2, 0]
+
+COLUMN: expected_goals_xg
+DATA TYPE: float64
+SAMPLE VALUES: [0.0, 0.01, 0.08, 0.0, 0.0]
+
+COLUMN: expected_assists_xa
+DATA TYPE: float64
+SAMPLE VALUES: [0.0, 0.0, 0.07, 0.21, 0.0]
+
+COLUMN: key_passes
+DATA TYPE: int64
+SAMPLE VALUES: [0, 1, 2, 0, 1]
+
+COLUMN: successful_passes
+DATA TYPE: int64
+SAMPLE VALUES: [15, 35, 72, 12, 33]
+
+COLUMN: total_passes
+DATA TYPE: int64
+SAMPLE VALUES: [26, 40, 85, 19, 44]
+
+COLUMN: pass_accuracy
+DATA TYPE: float64
+SAMPLE VALUES: [0.59, 0.89, 0.85, 0.67, 0.76]
+
+COLUMN: dribbles_attempted
+DATA TYPE: int64
+SAMPLE VALUES: [0, 1, 0, 1, 2]
+
+COLUMN: successful_dribbles
+DATA TYPE: int64
+SAMPLE VALUES: [0, 0, 0, 0, 1]
+
+COLUMN: crosses
+DATA TYPE: int64
+SAMPLE VALUES: [0, 1, 3, 0, 0]
+
+COLUMN: successful_crosses
+DATA TYPE: int64
+SAMPLE VALUES: [0, 0, 0, 0, 0]
+
+COLUMN: tackles
+DATA TYPE: int64
+SAMPLE VALUES: [0, 0, 1, 1, 1]
+
+COLUMN: interceptions
+DATA TYPE: int64
+SAMPLE VALUES: [0, 1, 1, 1, 3]
+
+COLUMN: clearances
+DATA TYPE: int64
+SAMPLE VALUES: [0, 3, 0, 1, 0]
+
+COLUMN: blocks
+DATA TYPE: int64
+SAMPLE VALUES: [0, 1, 0, 0, 2]
+
+COLUMN: aerial_duels_won
+DATA TYPE: int64
+SAMPLE VALUES: [0, 2, 1, 3, 1]
+
+COLUMN: aerial_duels_lost
+DATA TYPE: int64
+SAMPLE VALUES: [0, 0, 2, 0, 2]
+
+COLUMN: recoveries
+DATA TYPE: int64
+SAMPLE VALUES: [0, 2, 4, 1, 4]
+
+COLUMN: defensive_actions
+DATA TYPE: int64
+SAMPLE VALUES: [0, 5, 2, 3, 6]
+
+COLUMN: fouls_committed
+DATA TYPE: int64
+SAMPLE VALUES: [3, 0, 0, 0, 0]
+
+COLUMN: fouls_suffered
+DATA TYPE: int64
+SAMPLE VALUES: [0, 1, 0, 1, 0]
+
+COLUMN: yellow_cards
+DATA TYPE: int64
+SAMPLE VALUES: [0, 0, 0, 0, 0]
+
+COLUMN: red_cards
+DATA TYPE: int64
+SAMPLE VALUES: [0, 0, 0, 0, 0]
+
+COLUMN: offsides
+DATA TYPE: int64
+SAMPLE VALUES: [0, 0, 0, 0, 0]
+
+COLUMN: saves
+DATA TYPE: int64
+SAMPLE VALUES: [4, 0, 0, 0, 0]
+
+COLUMN: save_percentage
+DATA TYPE: float64
+SAMPLE VALUES: [0.83, 0.0, 0.0, 0.0, 0.0]
+
+COLUMN: punches
+DATA TYPE: int64
+SAMPLE VALUES: [0, 0, 0, 0, 0]
+
+COLUMN: clean_sheet
+DATA TYPE: int64
+SAMPLE VALUES: [1, 0, 0, 0, 0]
+
+COLUMN: goals_conceded
+DATA TYPE: int64
+SAMPLE VALUES: [0, 0, 0, 0, 0]
+
+COLUMN: penalty_saves
+DATA TYPE: int64
+SAMPLE VALUES: [0, 0, 0, 0, 0]
+
+COLUMN: distance_covered_km
+DATA TYPE: float64
+SAMPLE VALUES: [7.8, 10.4, 8.8, 9.6, 7.5]
+
+COLUMN: sprint_distance_km
+DATA TYPE: float64
+SAMPLE VALUES: [0.7, 1.1, 1.3, 1.0, 0.7]
+
+COLUMN: top_speed_kmh
+DATA TYPE: float64
+SAMPLE VALUES: [26.5, 29.0, 33.7, 32.1, 30.5]
+
+COLUMN: accelerations
+DATA TYPE: int64
+SAMPLE VALUES: [13, 19, 30, 26, 23]
+
+COLUMN: decelerations
+DATA TYPE: int64
+SAMPLE VALUES: [23, 17, 19, 19, 18]
+
+COLUMN: stamina_score
+DATA TYPE: float64
+SAMPLE VALUES: [81.9, 85.5, 88.8, 89.2, 73.6]
+
+COLUMN: player_rating
+DATA TYPE: float64
+SAMPLE VALUES: [5.6, 5.7, 8.3, 6.9, 5.7]
+
+COLUMN: performance_score
+DATA TYPE: float64
+SAMPLE VALUES: [50.9, 55.9, 82.9, 67.5, 55.4]
+
+COLUMN: offensive_contribution
+DATA TYPE: float64
+SAMPLE VALUES: [3.3, 37.9, 79.8, 47.3, 33.0]
+
+COLUMN: defensive_contribution
+DATA TYPE: float64
+SAMPLE VALUES: [48.2, 29.4, 78.6, 6.9, 75.6]
+
+COLUMN: possession_impact
+DATA TYPE: float64
+SAMPLE VALUES: [1.1, 3.5, 15.3, 1.2, 6.2]
+
+COLUMN: pressure_resistance
+DATA TYPE: float64
+SAMPLE VALUES: [44.2, 38.2, 99.0, 19.8, 44.1]
+
+COLUMN: creativity_score
+DATA TYPE: float64
+SAMPLE VALUES: [55.9, 43.7, 99.0, 42.3, 33.5]
+
+COLUMN: consistency_score
+DATA TYPE: float64
+SAMPLE VALUES: [42.0, 31.1, 83.4, 40.9, 60.0]
+
+COLUMN: clutch_performance_score
+DATA TYPE: float64
+SAMPLE VALUES: [51.8, 52.7, 54.8, 78.5, 56.6]
+
+COLUMN: total_goals_tournament
+DATA TYPE: int64
+SAMPLE VALUES: [0, 0, 1, 5, 0]
+
+COLUMN: total_assists_tournament
+DATA TYPE: int64
+SAMPLE VALUES: [0, 3, 1, 3, 0]
+
+COLUMN: total_minutes_tournament
+DATA TYPE: int64
+SAMPLE VALUES: [242, 342, 245, 422, 440]
+
+COLUMN: player_of_match_awards
+DATA TYPE: int64
+SAMPLE VALUES: [0, 0, 0, 0, 0]
+
+COLUMN: tournament_rating
+DATA TYPE: float64
+SAMPLE VALUES: [5.8, 5.5, 8.4, 6.7, 5.7]
