@@ -2,6 +2,7 @@
 import streamlit as st
 import pandas as pd
 import os
+import ollama
 
 # Page configuration
 st.set_page_config(
@@ -283,8 +284,120 @@ def advanced_fifa_answer(question):
 
     return None
 
-    q = question.lower().strip()
+# -------- OLLAMA CONNECTION --------
+
+def get_ollama_client():
+
+    # Check for hosted API key in Streamlit Cloud
+    try:
+        api_key = st.secrets.get("OLLAMA_API_KEY", "")
+    except Exception:
+        api_key = ""
+
+    # Also allow an environment variable for local testing
+    api_key = api_key or os.getenv("OLLAMA_API_KEY", "")
+
+    if api_key:
+        client = ollama.Client(
+            host="https://ollama.com",
+            headers={
+                "Authorization": f"Bearer {api_key}"
+            }
+        )
+        model_name = "gemma4:31b"
+
+    else:
+        # Use your local Ollama installation
+        client = ollama.Client(
+            host="http://localhost:11434"
+        )
+        model_name = "llama3.2:3b"
+
+    return client, model_name
+
+# -------- OLLAMA AI INTEGRATION --------
+
+def is_football_related(question):
+    prompt = f"""
+    Decide whether this question is related to FIFA,
+    football, soccer, football players, clubs, teams,
+    tournaments, rules, tactics or football history.
+
+    Reply with ONLY YES or NO.
+
+    Question: {question}
+    """
+
+    try:
+        client, model_name = get_ollama_client()
+
+        response = client.chat(
+            model=model_name,
+            messages=[
+                {
+                    "role": "system",
+                    "content": "You classify questions. Reply only YES or NO."
+                },
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ],
+            options={"temperature": 0}
+        )
+
+        result = response["message"]["content"].strip().upper()
+        return result.startswith("YES")
+
+    except Exception as e:
+        print("Ollama classification error:", e)
+        return None
+
+
+def generate_football_answer(question):
+
+    try:
+        client, model_name = get_ollama_client()
+
+        response = client.chat(
+            model=model_name,
+            messages=[
+                {
+                    "role": "system",
+                    "content": """
+                    You are FIFA Club AI, a football knowledge assistant.
+
+                    Answer only questions about FIFA, football and soccer.
+
+                    Explain football rules, tactics, formations,
+                    tournaments, clubs and general football knowledge.
+
+                    Never invent exact player statistics or claim
+                    that information came from the project's dataset.
+
+                    If asked for information that requires current
+                    statistics, clearly mention that you cannot
+                    verify live information.
+                    """
+                },
+                {"role": "user", "content": question}
+            ]
+        )
+
+        return response["message"]["content"]
+
+    except Exception:
+        return (
+            "Sorry! I couldn't connect to the Ollama AI model. "
+            "Please check whether Ollama is running."
+        )
+
 def answer_question(question):
+
+    # Convert question to lowercase
+    q = question.lower().strip()
+
+    # Check advanced FIFA questions
     advanced_answer = advanced_fifa_answer(question)
 
     if advanced_answer is not None:
@@ -567,12 +680,27 @@ def answer_question(question):
             + ", ".join(map(str, teams[:15]))
         )
 
-    # 7. QUESTIONS OUTSIDE FIFA
+    # 7. OLLAMA FALLBACK FOR QUESTIONS NOT ANSWERED BY DATASET
+
+    football_related = is_football_related(question)
+
+    # Ollama connection problem
+    if football_related is None:
+        return (
+            "Sorry! I couldn't connect to my AI assistant. "
+            "Please make sure Ollama is running."
+        )
+
+    # Football-related question: generate an answer using Ollama
+    if football_related:
+        return generate_football_answer(question)
+
+    # Unrelated question
     return (
-        "Sorry! This question is not related to my FIFA dataset ⚽ "
-        "Please visit Google Search, Wikipedia or another "
-        "relevant platform to find your answer. "
-        "I'm here to help with FIFA players and football statistics!"
+        "Sorry! This question is not related to FIFA or football ⚽ "
+        "Please visit https://chatgpt.com/ for assistance. "
+        "I'm here to help with FIFA players, football knowledge "
+        "and performance statistics!"
     )
 
 
